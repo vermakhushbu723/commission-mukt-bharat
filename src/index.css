@@ -1,0 +1,515 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ *
+ * Design tokens — Indian-flag palette & type system.
+ * Tailwind v4 turns every --color-* / --font-* into matching utilities
+ * (bg-paper, text-ink, border-rule, font-display, ...).
+ * ------------------------------------------------------------------ */
+@theme {
+  /* Logo-derived palette: white ground + charcoal + flag saffron & green in
+     equal billing. Dark sections & body text use a neutral charcoal "ink"
+     (the logo's fist/wordmark colour) — no blue runs through the theme.
+     Blue survives only as a rare, deliberate accent. */
+  --color-paper: #fafaf7; /* white ground */
+  --color-paper-soft: #f2f1ec; /* warm-neutral light panel */
+  --color-ink: #232323; /* neutral charcoal — dark sections + body text */
+  --color-gold: #ff9933; /* flag saffron — primary accent (keeps the "gold" utility names) */
+  --color-gold-ink: #c2530e; /* deep saffron — accent text on white */
+  --color-gold-soft: #ffb877; /* light saffron */
+  --color-green: #138808; /* flag green — equal-billing accent */
+  --color-green-ink: #0b6b22; /* deep green — accent text on white */
+  --color-blue: #1e40af; /* chakra blue — used sparingly, in very few places */
+  --color-blue-ink: #1e3a8f; /* deep blue — rare accent text on white */
+  --color-rule: rgba(35, 35, 35, 0.12);
+  --color-rule-on-ink: rgba(255, 255, 255, 0.14);
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Bowlby One', system-ui, sans-serif;
+  --font-condensed: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
+  --font-devanagari: 'Noto Serif Devanagari', serif;
+}
+
+/* ------------------------------------------------------------------ *
+ * Base layer
+ * ------------------------------------------------------------------ */
+@layer base {
+  :root {
+    --paper-soft: #f2f1ec;
+    --font-condensed: 'Oswald', 'Arial Narrow', system-ui, sans-serif;
+    --font-display: 'Bowlby One', system-ui, sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.05;
+  }
+
+  /* The brand uses <em> purely as a coloured accent, never true italics. */
+  em {
+    font-style: normal;
+  }
+
+  /* FAQ uses a custom "+" toggle, so hide the native disclosure marker. */
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Typographic helpers
+ * ------------------------------------------------------------------ */
+.condensed {
+  font-family: var(--font-condensed);
+}
+
+.eyebrow {
+  font-family: var(--font-condensed);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  padding: 0.75rem 1rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-condensed);
+  letter-spacing: 0.12em;
+  border-radius: 0 0 0.25rem 0;
+}
+.skip-link:focus {
+  left: 0;
+}
+
+.approved-stamp {
+  display: inline-block;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.62rem;
+  padding: 2px 6px;
+  transform: rotate(-6deg);
+}
+
+.paper-grain {
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'180'%20height%3D'180'%3E%3Cfilter%20id%3D'n'%3E%3CfeTurbulence%20type%3D'fractalNoise'%20baseFrequency%3D'0.9'%20numOctaves%3D'2'%20stitchTiles%3D'stitch'%2F%3E%3CfeColorMatrix%20values%3D'0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.45%200'%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D'100%25'%20height%3D'100%25'%20filter%3D'url(%23n)'%20opacity%3D'0.7'%2F%3E%3C%2Fsvg%3E");
+}
+
+/* ------------------------------------------------------------------ *
+ * Marquees / tickers
+ * Each track duplicates its content, so translateX(-50%) loops seamlessly.
+ * ------------------------------------------------------------------ */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: tcjp-marquee 42s linear infinite;
+  will-change: transform;
+}
+.marquee-track-fast {
+  animation-duration: 26s;
+}
+.news-ticker-track {
+  display: flex;
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: tcjp-marquee 34s linear infinite;
+  will-change: transform;
+}
+@keyframes tcjp-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Hero ambience
+ * ------------------------------------------------------------------ */
+.scene-zoom {
+  animation: tcjp-zoom 26s ease-in-out infinite alternate;
+}
+@keyframes tcjp-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.parallax-drift {
+  animation: tcjp-drift 20s ease-in-out infinite alternate;
+}
+@keyframes tcjp-drift {
+  from {
+    transform: translateX(-50%) translateX(-12px);
+  }
+  to {
+    transform: translateX(-50%) translateX(12px);
+  }
+}
+
+.floodlight-1 {
+  animation: tcjp-flood 7s ease-in-out infinite alternate;
+}
+.floodlight-2 {
+  animation: tcjp-flood 9s ease-in-out infinite alternate;
+  animation-delay: -2s;
+}
+.floodlight-3 {
+  animation: tcjp-flood 6s ease-in-out infinite alternate;
+  animation-delay: -1s;
+}
+@keyframes tcjp-flood {
+  from {
+    opacity: 0.45;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.smoke-a {
+  animation: tcjp-smoke 45s linear infinite;
+}
+.smoke-b {
+  animation: tcjp-smoke 60s linear infinite reverse;
+}
+@keyframes tcjp-smoke {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.lens-pulse {
+  animation: tcjp-lens 4.5s ease-in-out infinite;
+}
+@keyframes tcjp-lens {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.flag-wave {
+  animation: tcjp-flag 2.6s ease-in-out infinite;
+  transform-origin: 5px 10px;
+}
+@keyframes tcjp-flag {
+  0%,
+  100% {
+    transform: skewY(0deg) skewX(0deg);
+  }
+  25% {
+    transform: skewY(-3deg) skewX(2.5deg);
+  }
+  50% {
+    transform: skewY(0deg) skewX(-2deg);
+  }
+  75% {
+    transform: skewY(3deg) skewX(1.5deg);
+  }
+}
+
+.kurta-sway {
+  animation: tcjp-sway 5s ease-in-out infinite;
+  transform-origin: 50px 60px;
+}
+@keyframes tcjp-sway {
+  0%,
+  100% {
+    transform: rotate(-1.6deg);
+  }
+  50% {
+    transform: rotate(1.6deg);
+  }
+}
+
+.camera-flash-1 {
+  animation: tcjp-flash 5s linear infinite;
+}
+.camera-flash-2 {
+  animation: tcjp-flash 5s linear infinite;
+  animation-delay: 1.7s;
+}
+.camera-flash-3 {
+  animation: tcjp-flash 5s linear infinite;
+  animation-delay: 3.2s;
+}
+@keyframes tcjp-flash {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  7% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.particle-rise {
+  animation-name: tcjp-particle;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes tcjp-particle {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-72vh);
+    opacity: 0;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Scroll reveal — elements tagged `.reveal` start hidden and ease in
+ * when an IntersectionObserver (see App.jsx) adds `.is-visible`.
+ * Optional stagger via inline `--reveal-delay`.
+ * ------------------------------------------------------------------ */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal-zoom {
+  transform: translateY(20px) scale(0.97);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Animated tricolour rule under section headings — equal saffron + green,
+   sweeps open from the left once its section reveals. */
+.title-rule {
+  display: block;
+  height: 4px;
+  width: 68px;
+  margin-top: 1.1rem;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--color-gold) 0 50%, var(--color-green) 50% 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.8s 0.15s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.title-rule.center {
+  margin-left: auto;
+  margin-right: auto;
+  transform-origin: center;
+}
+.is-visible .title-rule,
+.title-rule.is-visible {
+  transform: scaleX(1);
+}
+
+/* Card / panel hover lift */
+.hover-lift {
+  transition:
+    transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.2, 0.7, 0.2, 1),
+    border-color 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Nudge a trailing arrow on hover of its group */
+.group:hover .arrow {
+  transform: translateX(4px);
+}
+.arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+/* Button sheen — a light streak sweeps across on hover */
+.btn-sheen {
+  position: relative;
+  overflow: hidden;
+}
+.btn-sheen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  transform: skewX(-18deg);
+  transition: left 0.65s ease;
+  pointer-events: none;
+}
+.btn-sheen:hover::after {
+  left: 140%;
+}
+
+/* Soft pulsing halo for a primary call-to-action (green by default) */
+.cta-pulse {
+  animation: cta-pulse 2.8s ease-in-out infinite;
+}
+@keyframes cta-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 6px 18px rgba(19, 136, 8, 0.3),
+      0 0 0 0 var(--pulse, rgba(19, 136, 8, 0.5));
+  }
+  50% {
+    box-shadow:
+      0 6px 18px rgba(19, 136, 8, 0.3),
+      0 0 0 12px rgba(19, 136, 8, 0);
+  }
+}
+
+/* Animated saffron→green underline that grows under a nav link on hover */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-green));
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Gentle vertical bob */
+.float-bob {
+  animation: float-bob 4.5s ease-in-out infinite;
+}
+@keyframes float-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+/* Pop-in (used for the eligibility check mark) */
+.pop-in {
+  animation: pop-in 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@keyframes pop-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Staggered entrance for list rows (self-contained, no observer needed so it
+   replays cleanly when a filtered list re-renders). */
+.article-in {
+  opacity: 0;
+  animation: article-in 0.55s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+@keyframes article-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Slow-drifting tricolour shimmer for accent strips */
+.tricolor-shimmer {
+  background-size: 200% 100%;
+  animation: tricolor-shimmer 6s linear infinite;
+}
+@keyframes tricolor-shimmer {
+  from {
+    background-position: 0% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Respect reduced-motion preferences
+ * ------------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,50 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Commission-Mukt Bharat emblem">
+  <circle cx="100" cy="100" r="96" fill="#FAFAF7" />
+  <circle cx="100" cy="100" r="96" fill="none" stroke="#14213D" stroke-width="6" />
+  <circle cx="100" cy="100" r="84" fill="none" stroke="#14213D" stroke-width="2" />
+  <g stroke="#14213D" stroke-width="2.4" stroke-linecap="round">
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(0 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(15 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(30 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(45 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(60 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(75 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(90 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(105 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(120 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(135 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(150 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(165 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(180 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(195 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(210 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(225 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(240 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(255 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(270 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(285 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(300 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(315 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(330 100 100)" />
+    <line x1="100" y1="20" x2="100" y2="27" transform="rotate(345 100 100)" />
+  </g>
+  <g transform="rotate(-20 116 78)">
+    <rect x="104" y="58" width="46" height="23" rx="2" fill="#FAFAF7" stroke="#14213D" stroke-width="2.4" />
+    <rect x="110" y="51" width="46" height="23" rx="2" fill="#FAFAF7" stroke="#14213D" stroke-width="2.4" />
+    <text x="133" y="69" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#FF9933">₹</text>
+  </g>
+  <g fill="#14213D">
+    <rect x="83" y="150" width="32" height="30" rx="6" />
+    <rect x="74" y="98" width="50" height="58" rx="13" />
+    <circle cx="84" cy="98" r="8" />
+    <circle cx="95" cy="97" r="8.5" />
+    <circle cx="106" cy="97" r="8.5" />
+    <circle cx="117" cy="98" r="8" />
+    <path d="M124 110 q12 0 12 15 q0 14 -13 14 l-5 0 q-3 0 -3 -7 l0 -15 q0 -7 9 -7 z" />
+  </g>
+  <g stroke="#FAFAF7" stroke-width="3" stroke-linecap="round">
+    <line x1="88" y1="106" x2="88" y2="150" />
+    <line x1="99.5" y1="104" x2="99.5" y2="150" />
+    <line x1="111" y1="106" x2="111" y2="150" />
+  </g>
+</svg>
