@@ -5,47 +5,39 @@ export const DEMANDS = [
     n: '01',
     segments: [
       { text: 'If Commission-Mukt Bharat comes to power, ' },
-      { text: 'no Chief Justice shall be granted a Rajya Sabha seat', strong: true },
-      { text: ' as a post-retirement reward.' },
+      { text: 'no food-delivery or quick-commerce app shall charge a restaurant a commission above 10%', strong: true },
+      { text: ' — ending the era where platforms earn more from a meal than the kitchen that cooks it.' },
     ],
   },
   {
     n: '02',
     segments: [
-      { text: 'If any legitimate vote is deleted, whether in a ruling or opposition state, the ' },
-      { text: 'CEC shall be arrested under UAPA', strong: true },
-      { text: ', as taking away voting rights of citizens is no less than terrorism.' },
+      { text: 'Every bill shall be fully itemised, and all hidden ' },
+      { text: '“platform”, “convenience”, “handling” and “packaging” fees shall be banned or disclosed upfront', strong: true },
+      { text: ', so no customer is charged a single rupee they cannot see and understand.' },
     ],
   },
   {
     n: '03',
     segments: [
-      { text: 'Women shall receive 50% reservation, not 33%', strong: true },
-      { text: ', without increasing the strength of Parliament. Additionally, ' },
-      { text: '50% of all Cabinet positions', strong: true },
-      { text: ' shall be reserved for women.' },
+      { text: 'Delivery riders and cab drivers shall take home ' },
+      { text: 'at least 80% of the fare the customer actually pays', strong: true },
+      { text: ', with a transparent breakup of every order and every ride shown to both the worker and the customer.' },
     ],
   },
   {
     n: '04',
     segments: [
-      { text: 'All media houses owned by ' },
-      { text: 'Ambani and Adani shall have their licences cancelled', strong: true },
-      {
-        text:
-          ' to make way for truly independent media. Bank accounts of Godi media anchors shall be investigated.',
-      },
+      { text: 'Algorithmic ' },
+      { text: 'surge and “dynamic” pricing shall be capped at 1.5× the base fare', strong: true },
+      { text: ', and no app shall quote a different price to a different phone for the very same ride.' },
     ],
   },
   {
     n: '05',
     segments: [
-      { text: 'Any MLA or MP who defects from one party to another shall be ' },
-      {
-        text:
-          'barred from contesting elections — and from holding any public office — for a period of 20 years',
-        strong: true,
-      },
+      { text: 'Any platform that hides its true commission or deactivates a worker without cause shall ' },
+      { text: 'face a public audit and lose its licence to operate on repeat violations', strong: true },
       { text: '.' },
     ],
   },
