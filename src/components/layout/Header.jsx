@@ -15,7 +15,7 @@ function Brand() {
       aria-label="Commission-Mukt Bharat — Home"
       href="/"
     >
-      <Logo variant="light" className="h-14 sm:h-16 w-auto" />
+      <Logo variant="light" className="h-11 sm:h-12 w-auto" />
       <span className="sr-only">Commission-Mukt Bharat · {SITE.nameHindi}</span>
     </a>
   )
@@ -74,7 +74,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b border-ink/10 relative">
-      <div className="max-w-6xl mx-auto px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-between gap-6">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 py-1.5 sm:py-2 flex items-center justify-between gap-6">
         <Brand />
 
         {/* <div className="flex items-center gap-6"> */}
