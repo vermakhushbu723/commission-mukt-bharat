@@ -20,12 +20,12 @@ export default function Home() {
       <SloganMarquee />
       <Vision />
       <OurVision />
+      <WhoShouldNotJoin />
       <NonPolitical />
       <OurMotive />
       <Faq />
       <Articles />
       <Join />
-      <WhoShouldNotJoin />
       <Revolutionaries />
       <Contact />
     </main>

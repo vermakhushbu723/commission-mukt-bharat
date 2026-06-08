@@ -20,7 +20,7 @@ export default function SwarmChatButton() {
             </button>
           </div>
           <p className="text-sm text-ink/75 leading-relaxed mb-4">
-            Live chat isn't up yet. Send a tip, an RTI reply, or a receipt — we read every word.
+            Live chat isn't up yet. Send a tip, a screenshot, or a receipt — we read every word.
           </p>
           <a
             href={`mailto:${SITE.emails.contact}`}

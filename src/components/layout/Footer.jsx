@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-1">
             <FooterBrand />
             <p className="text-paper/65 text-sm leading-relaxed mt-5 sm:mt-6 max-w-md">
-              A citizens' movement against commissions, kickbacks, and quiet corruption. Headquartered wherever the
+              A citizens' movement against unfair commissions, surge tricks, and stacked-up platform fees. Headquartered wherever the
               wifi works.
             </p>
             <ul className="flex flex-wrap items-center gap-2.5 mt-5 sm:mt-6" aria-label="Social media">
@@ -103,7 +103,7 @@ export default function Footer() {
               className="font-bold tracking-[0.18em] uppercase text-[0.62rem] sm:text-[0.7rem]"
               style={{ fontFamily: 'var(--font-condensed)' }}
             >
-              ✦ Towards a Corruption-Free India
+              ✦ Towards a Fair-Priced Bharat
             </div>
             <nav className="hidden sm:flex flex-wrap items-center gap-3" aria-label="Quick links">
               {FOOTER_BOTTOM_LINKS.map((link, i) => (

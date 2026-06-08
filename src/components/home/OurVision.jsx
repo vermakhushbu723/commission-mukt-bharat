@@ -4,25 +4,25 @@ const PILLARS = [
   {
     n: '01',
     title: 'Total Transparency',
-    body: 'Every public rupee — sanctioned, spent, or quietly “adjusted” — should be traceable by any citizen. Budgets in the open. Tenders in the open. Receipts on demand.',
+    body: 'Every order, every ride, every delivery should come with a bill you can actually read — what the app keeps, what the worker earns, what you pay. No mystery line items. Receipts on demand.',
     accent: 'text-gold',
   },
   {
     n: '02',
     title: 'Zero Commissions',
-    body: 'No cut to register a complaint. No bribe to clear a file. No kickback to simply be heard. What is yours by right should never carry a price tag.',
+    body: 'No unfair cut on a small restaurant\'s order. No surge trick on a daily ride. No mystery fee for simply being a customer. What you pay should always match what you get.',
     accent: 'text-green',
   },
   {
     n: '03',
     title: 'Citizens in Charge',
-    body: 'Accountability driven by people, not parties. A Bharat where ordinary citizens ask the hard questions — loudly, repeatedly, and in writing — and expect real answers.',
+    body: 'Pricing driven by people, not platforms. A Bharat where customers, riders and small businesses ask the hard questions — loudly, repeatedly, and in writing — and expect a fair answer.',
     accent: 'text-gold',
   },
   {
     n: '04',
-    title: 'Corruption Made Costly',
-    body: 'Make graft the most expensive habit in Indian public life. When every leaked rupee invites a thousand questions, the quiet scam stops being quiet — and stops being safe.',
+    title: 'Gouging Made Costly',
+    body: 'Make overcharging the most expensive habit on India\'s apps. When every inflated bill invites a thousand questions, the quiet markup stops being quiet — and stops being profitable.',
     accent: 'text-green',
   },
 ]
@@ -71,7 +71,7 @@ export default function OurVision() {
         {/* Closing statement */}
         <div className="max-w-3xl mx-auto text-center mt-14 sm:mt-16 reveal">
           <p className="font-display text-2xl sm:text-3xl md:text-4xl leading-snug">
-            We're not asking for a <em className="text-gold">cleaner</em> system.
+            We're not asking for a <em className="text-gold">fairer</em> bill.
             <br className="hidden sm:block" /> We're building the <em className="text-green">habit</em> of demanding one.
           </p>
           <div className="mt-10">

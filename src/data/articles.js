@@ -1,23 +1,23 @@
 export const ARTICLES = [
   {
-    slug: 'tareekh-pe-tareekh-indian-judiciary',
+    slug: 'how-the-apps-eat-your-bill',
     date: '2026-05-23',
     dateLabel: '23 May 2026',
     readTime: '1 min read',
-    category: 'Judicial Reform',
-    title: "Tareekh Pe Tareekh: The Indian Judiciary's Business Model",
+    category: 'Investigations',
+    title: 'How the Apps Eat Your Bill: The ₹313 Breakdown',
     excerpt:
-      'Commission-Mukt Bharat examines the glorious rot of our judiciary. Four mechanisms turned it into a VIP subscription. Here is how we end them.',
+      'Commission-Mukt Bharat breaks down a single food order — platform fee, surge, convenience, handling. Four line items turned a ₹150 meal into a ₹313 bill. Here is how we end them.',
   },
   {
-    slug: 'the-quiet-rights-human-rights-india',
+    slug: 'the-rider-who-earns-less-than-the-app',
     date: '2026-05-22',
     dateLabel: '22 May 2026',
     readTime: '1 min read',
-    category: 'Human Rights',
-    title: 'The Quiet Rights: Human Rights and Everyday India',
+    category: 'Gig Economy',
+    title: 'The Rider Who Earns Less Than the App',
     excerpt:
-      'India has loud rights and quiet ones. The loud ones are recited in court. The quiet ones — dignity, identity, shelter, voice, and the right to fail without shame — are what we are losing.',
+      'On many deliveries the platform now keeps more than the person who rode through traffic to make them. We follow one rider through a full shift — and the commission math that leaves them behind.',
   },
   {
     slug: 'anatomy-of-a-commission',
@@ -27,7 +27,7 @@ export const ARTICLES = [
     category: 'Investigations',
     title: 'The Anatomy of a Commission: How Cuts Become Culture',
     excerpt:
-      'A sanctioned rupee, a delivered service, and the percentage that vanishes in between. The story of how the kickback stopped being a crime and became a convention — and how a receipt ends it.',
+      'An order placed, a meal delivered, and the percentage that vanishes in between. The story of how the platform cut stopped being a simple fee and became a habit — and how an honest bill ends it.',
   },
   {
     slug: 'the-five-demands-explained',
@@ -47,6 +47,6 @@ export const ARTICLES = [
     category: 'The Movement',
     title: 'Why We Started Commission-Mukt Bharat',
     excerpt:
-      'A citizens’ movement for the India that refuses to pay a commission — why a corruption-free nation is no longer a slogan but a checklist, and how citizens signed up.',
+      'A citizens’ movement for the India that refuses to pay an unfair commission — why a fair-priced Bharat is no longer a slogan but a checklist, and how citizens signed up.',
   },
 ]

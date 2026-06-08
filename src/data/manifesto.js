@@ -12,7 +12,7 @@ export const DEMANDS = [
   {
     n: '02',
     segments: [
-      { text: 'Every bill shall be fully itemised, and all hidden ' },
+      { text: 'Every bill shall be fully itemised, and all extra ' },
       { text: '“platform”, “convenience”, “handling” and “packaging” fees shall be banned or disclosed upfront', strong: true },
       { text: ', so no customer is charged a single rupee they cannot see and understand.' },
     ],
@@ -36,7 +36,7 @@ export const DEMANDS = [
   {
     n: '05',
     segments: [
-      { text: 'Any platform that hides its true commission or deactivates a worker without cause shall ' },
+      { text: 'Any platform that breaches the commission cap or deactivates a worker without cause shall ' },
       { text: 'face a public audit and lose its licence to operate on repeat violations', strong: true },
       { text: '.' },
     ],

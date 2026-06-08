@@ -1,8 +1,8 @@
-// Sectors where a silent commission rides along — the areas this movement targets.
+// Sectors where a heavy commission rides along — the areas this movement targets.
 export const SECTORS = [
   {
     title: 'Food Delivery',
-    desc: 'Every plate you order carries a hidden cut. Platforms squeeze restaurants with steep commissions, and the bill quietly lands on you.',
+    desc: 'Every plate you order carries an extra cut. Platforms squeeze restaurants with steep commissions, and the bill ultimately lands on you.',
   },
   {
     title: 'Riders & Delivery Partners',

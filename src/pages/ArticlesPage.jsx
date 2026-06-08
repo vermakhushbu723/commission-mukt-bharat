@@ -28,7 +28,7 @@ export default function ArticlesPage() {
             <span className="title-rule mb-6" aria-hidden="true" />
             <p className="text-base sm:text-lg text-ink/75 mb-10 max-w-2xl">
               Long-form writing on the movement's origin, the five demands, and the everyday economics of
-              corruption in 2026. Read once. Read twice. Then send it to someone who needs to.
+              commissions in 2026. Read once. Read twice. Then send it to someone who needs to.
             </p>
 
             {/* ---------- Search ---------- */}

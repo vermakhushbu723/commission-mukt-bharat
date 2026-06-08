@@ -6,7 +6,7 @@ export const SITE = {
   nameHindi: 'कमीशन-मुक्त भारत',
   abbr: 'CMB',
   established: 'Est. 2026',
-  tagline: 'Towards a Corruption-Free India',
+  tagline: 'Towards a Fair-Priced Bharat',
   foundedDate: '16 . 05 . 2026',
   emails: {
     contact: 'contact@commissionmuktbharat.org',

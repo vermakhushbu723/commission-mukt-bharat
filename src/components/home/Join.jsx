@@ -15,7 +15,7 @@ export default function Join() {
           </h2>
           <span className="title-rule center mb-6" aria-hidden="true" />
           <p className="text-base sm:text-lg text-ink/75">
-            From your food order to your cab ride, a silent commission rides along. These are the sectors we are
+            From your food order to your cab ride, a heavy commission rides along. These are the sectors we are
             taking on.
           </p>
         </div>

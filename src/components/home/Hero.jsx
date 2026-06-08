@@ -238,12 +238,12 @@ export default function Hero() {
           <div className="max-w-2xl lg:max-w-3xl">
             <div>
               <div className="eyebrow text-gold mb-5 sm:mb-6 flex items-center gap-3">
-                <span
+                {/* <span
                   className="inline-block"
                   style={{ width: 12, height: 12, background: '#ff9933', transform: 'rotate(45deg)' }}
                   aria-hidden="true"
-                />
-                <span>Live rally · Since 2026</span>
+                /> */}
+                {/* <span>Live rally · Since 2026</span> */}
               </div>
               <h1 className="text-[clamp(1.35rem,7vw,1.75rem)] sm:text-5xl md:text-6xl lg:text-7xl leading-[1] sm:leading-[0.92] mb-6 sm:mb-8 drop-shadow-[0_2px_24px_rgba(0,0,0,0.7)]">
                 <span className="block text-paper whitespace-nowrap">Commission-Mukt</span>
@@ -251,8 +251,8 @@ export default function Hero() {
               </h1>
             </div>
             <p className="max-w-xl text-base sm:text-lg leading-relaxed text-paper/85 mb-10 drop-shadow-[0_1px_8px_rgba(0,0,0,0.6)]">
-              A citizens' movement for the India that refuses to pay a commission. Five demands. Zero kickbacks. One
-              accountable nation.
+              A citizens' movement for the India that refuses to pay an unfair commission. Five demands. Zero surprise
+              fees. One fair Bharat.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12">
               <a
@@ -268,7 +268,7 @@ export default function Hero() {
                 OUR VISION
               </a>
             </div>
-            <dl className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 pt-6 border-t border-paper/25 max-w-2xl">
+            {/* <dl className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 pt-6 border-t border-paper/25 max-w-2xl">
               {HERO_STATS.map((stat) => (
                 <div key={stat.label}>
                   <dt className="font-display text-3xl sm:text-4xl text-paper drop-shadow-[0_1px_6px_rgba(0,0,0,0.6)]">
@@ -277,13 +277,13 @@ export default function Hero() {
                   <dd className="condensed text-[0.7rem] text-paper/70 mt-1">{stat.label}</dd>
                 </div>
               ))}
-            </dl>
+            </dl> */}
           </div>
         </div>
       </div>
 
       {/* ---------- News ticker ---------- */}
-      <div className="absolute inset-x-0 bottom-0 bg-[#11631f] text-paper border-t-2 border-[#ff9933]/70 py-2 z-20 overflow-hidden">
+      {/* <div className="absolute inset-x-0 bottom-0 bg-[#11631f] text-paper border-t-2 border-[#ff9933]/70 py-2 z-20 overflow-hidden">
         <Marquee
           items={NEWS_TICKER}
           baseClass="news-ticker-track"
@@ -294,7 +294,7 @@ export default function Hero() {
             </span>
           )}
         />
-      </div>
+      </div> */}
     </section>
   )
 }

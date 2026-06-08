@@ -11,8 +11,8 @@ export default function Revolutionaries() {
           </h2>
           <span className="title-rule center mb-5" aria-hidden="true" />
           <p className="text-base sm:text-lg text-ink/75">
-            Honoring the courage of India's revolutionaries and preserving the freedoms they secured. Their legacy lives
-            on through a generation determined to strengthen democracy and drive positive change.
+            Honoring the courage of India's revolutionaries and the fairer nation they fought for. Their legacy lives
+            on through a generation determined to stand up for fair pricing, fair pay and an honest bill.
           </p>
         </div>
 

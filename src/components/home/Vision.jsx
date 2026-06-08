@@ -9,18 +9,18 @@ export default function Vision() {
         <div className="reveal">
           <div className="eyebrow text-green-ink mb-6">Chapter One · Our Vision</div>
           <h2 className="text-5xl sm:text-6xl md:text-7xl mb-2 leading-[0.95]">
-            Bharat Free From Hidden <em className="text-gold-ink">Commissions.</em>
+            Bharat Free From Unfair <em className="text-gold-ink">Commissions.</em>
           </h2>
           <span className="title-rule mb-8" aria-hidden="true" />
           <p className="text-base sm:text-lg leading-relaxed text-ink/80 mb-8 max-w-xl">
-            Every order, every ride, every delivery now hides a stack of charges — platform fee, surge charge,
+            Every order, every ride, every delivery now carries a stack of charges — platform fee, surge charge,
             convenience fee, handling fee. You pay ₹313 so an app can keep ₹173, while the restaurant, the driver and
             you are left asking the same question: <strong className="text-ink">who actually profits?</strong>
           </p>
           <div className="border-l-4 border-gold pl-5 max-w-xl">
             <div className="eyebrow text-gold-ink mb-2">Our Mission</div>
             <p className="text-base sm:text-lg leading-relaxed text-ink/85">
-              Build a Bharat with fair pricing and transparent services — every time. No hidden platform fees, no surge
+              Build a Bharat with fair pricing and transparent services — every time. No unfair platform fees, no surge
               loot, no convenience-fee games. Small businesses, drivers and customers, together for one simple promise:
               a fair bill, for a fair Bharat.
             </p>

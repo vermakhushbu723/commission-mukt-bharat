@@ -36,7 +36,7 @@ export function PosterPlaceholder({ className = '' }) {
         BHARAT
       </div>
       <div className="condensed text-paper/70 text-[0.5rem] sm:text-[0.6rem] tracking-[0.18em] uppercase mt-2 px-3">
-        Towards a Corruption-Free India
+        Towards a Fair-Priced Bharat
       </div>
       <Tricolour className="absolute bottom-0 inset-x-0 h-2" />
     </div>

@@ -3,13 +3,13 @@ const MOTIVES = [
   {
     n: '01',
     title: "Riders' Empowerment",
-    body: 'The riders who power every order deserve fair pay — not a shrinking cut after platform commissions, surge math and silent deductions. We stand for transparent payouts, safety, and dignity on the road.',
+    body: 'The riders who power every order deserve fair pay — not a shrinking cut after platform commissions, surge math and unfair deductions. We stand for transparent payouts, safety, and dignity on the road.',
     accent: 'text-gold-ink',
   },
   {
     n: '02',
     title: 'Gig Workers',
-    body: 'The gig economy runs on millions of workers with no safety net. We push for fair earnings, clear terms, and an end to the opaque fees buried in the fine print of every app.',
+    body: 'The gig economy runs on millions of workers with no safety net. We push for fair earnings, clear terms, and an end to the unfair fees packed into the fine print of every app.',
     accent: 'text-green-ink',
   },
   {
@@ -32,7 +32,7 @@ export default function OurMotive() {
           <span className="title-rule center mb-6" aria-hidden="true" />
           <p className="text-base sm:text-lg text-ink/75">
             Empower the people behind every order — the riders, workers and small partners who do the work while the
-            commission quietly disappears.
+            commission keeps climbing.
           </p>
         </div>
 

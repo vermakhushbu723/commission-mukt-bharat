@@ -41,7 +41,7 @@ export default function Contact() {
             Open your <em className="text-gold-ink">mailbox.</em>
           </p>
           <p className="text-sm text-ink/70 max-w-xs mb-8 leading-relaxed">
-            No forms. No captchas. Just write to us — tips, RTI replies, receipts, and ideas, all welcome.
+            No forms. No captchas. Just write to us — tips, screenshots, receipts, and ideas, all welcome.
           </p>
           <a
             href={joinMailto}

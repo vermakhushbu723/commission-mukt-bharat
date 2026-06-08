@@ -10,7 +10,7 @@ export default function Manifesto() {
           <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-2">The Manifesto.</h2>
           <span className="title-rule center mb-6" aria-hidden="true" />
           <p className="text-base sm:text-lg text-paper/75">
-            Five demands to end hidden commissions on food-delivery and cab-booking apps — fair pay for drivers,
+            Five demands to end unfair commissions on food-delivery and cab-booking apps — fair pay for drivers,
             honest bills for customers. Read it once. Read it twice. Then send it to someone who needs to read it.
           </p>
         </div>
