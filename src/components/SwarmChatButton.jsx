@@ -24,7 +24,7 @@ export default function SwarmChatButton() {
           </p>
           <a
             href={`mailto:${SITE.emails.contact}`}
-            className="condensed text-xs font-semibold tracking-wider bg-ink text-paper px-4 py-2.5 rounded-sm hover:bg-gold hover:text-ink transition inline-flex items-center gap-2"
+            className="btn-sheen condensed text-xs font-semibold tracking-wider bg-ink text-paper px-4 py-2.5 rounded-sm hover:bg-gold hover:text-ink transition inline-flex items-center gap-2"
           >
             EMAIL US <span aria-hidden="true">→</span>
           </a>
@@ -36,7 +36,7 @@ export default function SwarmChatButton() {
         aria-label="Open chat"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[60] inline-flex items-center gap-2 px-3 py-3 sm:px-4 sm:py-3.5 bg-ink text-paper rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.4)] border-2 border-gold/60 hover:bg-gold hover:text-ink hover:border-ink active:bg-gold/90 transition min-h-[52px] min-w-[52px]"
+        className="btn-tiranga-ring fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[60] inline-flex items-center gap-2 px-3 py-3 sm:px-4 sm:py-3.5 text-paper rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.45)] transition min-h-[52px] min-w-[52px]"
       >
         {open ? <CloseIcon size={18} /> : <MessageCircleIcon size={18} />}
         <span

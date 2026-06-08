@@ -156,7 +156,7 @@ export default function IssuesPage() {
   const vote = (id, dir) => setVotes((prev) => ({ ...prev, [id]: prev[id] === dir ? undefined : dir }))
 
   return (
-    <main id="main-content" className="min-h-screen bg-paper text-ink relative">
+    <main id="main-content" className="min-h-screen bg-transparent text-ink relative">
       <section className="py-10 sm:py-14">
         <div className="max-w-3xl xl:max-w-[88rem] mx-auto px-4 sm:px-6">
           {/* ---------- Header ---------- */}
@@ -172,7 +172,7 @@ export default function IssuesPage() {
               className="btn-sheen condensed text-sm font-semibold tracking-wider bg-green text-paper px-5 py-2.5 rounded-sm hover:bg-green-ink transition inline-flex items-center gap-2 shadow-[0_4px_14px_rgba(19,136,8,0.3)]"
               href={`mailto:${SITE.emails.contact}?subject=Raise%20an%20issue`}
             >
-              + RAISE AN ISSUE
+              + RAISE AN QUERY
             </a>
           </header>
 

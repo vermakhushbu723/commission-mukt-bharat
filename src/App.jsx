@@ -6,6 +6,7 @@ import SwarmChatButton from './components/SwarmChatButton'
 import Home from './pages/Home'
 import ArticlesPage from './pages/ArticlesPage'
 import IssuesPage from './pages/IssuesPage'
+import JoinPage from './pages/JoinPage'
 
 // Dependency-free routing: the Vite dev/preview server serves index.html for any
 // path, so we pick the page from the URL. Full-page <a> navigations keep it simple.
@@ -13,6 +14,7 @@ function currentPage() {
   const path = typeof window !== 'undefined' ? window.location.pathname : '/'
   if (path === '/articles' || path.startsWith('/articles/')) return 'articles'
   if (path === '/issues' || path.startsWith('/issues/')) return 'issues'
+  if (path === '/join') return 'join'
   return 'home'
 }
 
@@ -54,7 +56,15 @@ export default function App() {
       <AnnouncementBar />
       <Header />
 
-      {page === 'articles' ? <ArticlesPage /> : page === 'issues' ? <IssuesPage /> : <Home />}
+      {page === 'articles' ? (
+        <ArticlesPage />
+      ) : page === 'issues' ? (
+        <IssuesPage />
+      ) : page === 'join' ? (
+        <JoinPage />
+      ) : (
+        <Home />
+      )}
 
       <Footer />
       <SwarmChatButton />

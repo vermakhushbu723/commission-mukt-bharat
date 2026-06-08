@@ -20,7 +20,7 @@ export default function Revolutionaries() {
           <a
             aria-label="Become a member of Commission-Mukt Bharat"
             className="group block relative overflow-hidden rounded-sm border-2 border-ink shadow-[8px_8px_0_0_rgba(35,35,35,0.85)] focus:outline-none focus-visible:ring-4 focus-visible:ring-gold/60 transition-shadow hover:shadow-[10px_10px_0_0_rgba(35,35,35,0.9)]"
-            href="#join"
+            href="/join"
           >
             <RevolutionariesPlaceholder className="transition-transform duration-700 ease-out group-hover:scale-[1.015]" />
             <span

@@ -41,9 +41,30 @@
     scroll-padding-top: 5.5rem;
   }
 
+  html {
+    /* Guard against any element bleeding past the viewport on small screens.
+       `clip` (not `hidden`) keeps the sticky header working. */
+    overflow-x: clip;
+  }
+
   body {
     margin: 0;
+    overflow-x: clip;
     background-color: var(--color-paper);
+    /* Subtle tiranga wash — soft saffron at the top, clear paper through the
+       middle, soft green at the bottom. Fixed to the viewport so every page
+       carries the same tricolour vibe without hurting text contrast. */
+    background-image: linear-gradient(
+      to bottom,
+      rgba(255, 153, 51, 0.13) 0%,
+      rgba(255, 153, 51, 0.04) 16%,
+      transparent 34%,
+      transparent 64%,
+      rgba(19, 136, 8, 0.05) 84%,
+      rgba(19, 136, 8, 0.14) 100%
+    );
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: var(--color-ink);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -379,10 +400,18 @@
   transition: transform 0.25s ease;
 }
 
-/* Button sheen — a light streak sweeps across on hover */
+/* Every primary button matches the Live Chat look: dark (ink) fill + a tiranga
+   gradient border (saffron / white / green), white text, with a light sheen sweep. */
 .btn-sheen {
   position: relative;
   overflow: hidden;
+  border: 2px solid transparent !important;
+  background:
+    linear-gradient(var(--color-ink), var(--color-ink)) padding-box,
+    linear-gradient(90deg, var(--color-gold) 0 33.333%, #ffffff 33.333% 66.666%, var(--color-green) 66.666% 100%)
+      border-box !important;
+  color: #fff !important;
+  text-shadow: none;
 }
 .btn-sheen::after {
   content: '';
@@ -398,6 +427,28 @@
 }
 .btn-sheen:hover::after {
   left: 140%;
+}
+.btn-sheen:hover {
+  filter: brightness(1.14);
+}
+
+/* Tiranga gradient border for pill / non-sheen buttons (dark fill, tricolour ring) */
+.btn-tiranga-ring {
+  border: 2px solid transparent;
+  background:
+    linear-gradient(var(--color-ink), var(--color-ink)) padding-box,
+    linear-gradient(90deg, var(--color-gold) 0 33.333%, #ffffff 33.333% 66.666%, var(--color-green) 66.666% 100%)
+      border-box;
+}
+
+/* Reusable horizontal tiranga strip (sliders, dividers) */
+.tiranga-strip {
+  background: linear-gradient(
+    90deg,
+    var(--color-gold) 0 33.333%,
+    #ffffff 33.333% 66.666%,
+    var(--color-green) 66.666% 100%
+  );
 }
 
 /* Soft pulsing halo for a primary call-to-action (green by default) */

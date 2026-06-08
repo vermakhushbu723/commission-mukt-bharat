@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import MembersTicker from '../components/home/MembersTicker'
+import CommunityPosts from '../components/CommunityPosts'
 import { ARTICLES } from '../data/articles'
 
 export default function ArticlesPage() {
@@ -13,7 +14,7 @@ export default function ArticlesPage() {
     : ARTICLES
 
   return (
-    <main id="main-content" className="min-h-screen bg-paper text-ink relative">
+    <main id="main-content" className="min-h-screen bg-transparent text-ink relative">
       <MembersTicker />
 
       <section className="py-16 sm:py-24 md:py-28">
@@ -99,6 +100,9 @@ export default function ArticlesPage() {
               </p>
             </div>
           )}
+
+          {/* ---------- Community: post an article + per-post comments ---------- */}
+          <CommunityPosts />
         </div>
       </section>
     </main>

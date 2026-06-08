@@ -74,45 +74,47 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-paper/95 backdrop-blur border-b border-ink/10 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-3 sm:gap-4">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 py-3 sm:py-4 flex items-center justify-between gap-6">
         <Brand />
 
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-6" aria-label="Primary">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.label}
-              className="nav-link condensed text-[0.85rem] font-medium hover:text-green-ink transition"
-              href={link.href}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        {/* <div className="flex items-center gap-6"> */}
+          <nav className="hidden lg:flex items-center gap-6" aria-label="Primary">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.label}
+                className="nav-link condensed text-[0.85rem] font-medium hover:text-green-ink transition"
+                href={link.href}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
 
-        <div className="flex items-center gap-1.5 sm:gap-2">
-          <LanguageSelector />
+          <div className="flex items-center gap-6">
+            <LanguageSelector />
           <a
             className="btn-sheen group hidden sm:inline-flex items-center gap-1.5 condensed text-xs font-semibold tracking-wider bg-green text-paper px-3.5 sm:px-4 py-3 min-h-[44px] rounded-sm hover:bg-green-ink transition whitespace-nowrap shadow-[0_4px_14px_rgba(19,136,8,0.3)]"
-            href="#join"
+            href="/join"
           >
             JOIN THE MOVEMENT <span aria-hidden="true" className="arrow">→</span>
           </a>
           <a
-            className="hidden xl:inline-flex items-center condensed text-xs font-semibold tracking-wider border-2 border-ink text-ink px-3.5 py-3 min-h-[44px] rounded-sm hover:bg-ink hover:text-paper transition whitespace-nowrap"
+            className="btn-sheen hidden xl:inline-flex items-center condensed text-xs font-semibold tracking-wider border-2 border-ink text-ink px-3.5 py-3 min-h-[44px] rounded-sm hover:bg-ink hover:text-paper transition whitespace-nowrap"
             href="/issues"
           >
-            RAISE AN ISSUE <span aria-hidden="true">→</span>
+            RAISE AN QUERY <span aria-hidden="true">→</span>
           </a>
           <button
             type="button"
-            className="lg:hidden p-2 -mr-1 text-ink"
+            className="lg:hidden p-2 text-ink"
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
           >
             {menuOpen ? <CloseIcon size={22} /> : <MenuIcon size={22} />}
           </button>
-        </div>
+          </div>
+        {/* </div> */}
       </div>
 
       {/* Mobile navigation */}
@@ -134,7 +136,7 @@ export default function Header() {
             ))}
             <div className="flex flex-col gap-2 pt-4">
               <a
-                href="#join"
+                href="/join"
                 onClick={() => setMenuOpen(false)}
                 className="btn-sheen condensed text-sm font-semibold tracking-wider bg-green text-paper px-4 py-3 rounded-sm text-center hover:bg-green-ink transition"
               >
@@ -143,9 +145,9 @@ export default function Header() {
               <a
                 href="/issues"
                 onClick={() => setMenuOpen(false)}
-                className="condensed text-sm font-semibold tracking-wider border-2 border-ink text-ink px-4 py-3 rounded-sm text-center hover:bg-ink hover:text-paper transition"
+                className="btn-sheen condensed text-sm font-semibold tracking-wider border-2 border-ink text-ink px-4 py-3 rounded-sm text-center hover:bg-ink hover:text-paper transition"
               >
-                RAISE AN ISSUE →
+                RAISE AN QUERY →
               </a>
             </div>
           </nav>

@@ -68,11 +68,14 @@ export default function Hero() {
           className="absolute inset-0"
           style={{ background: 'radial-gradient(ellipse at 50% 30%, #20201d 0%, #161513 45%, #0b0b0a 100%)' }}
         />
+        {/* tiranga base glow — saffron, white & green across the foot of the stage */}
         <div
           className="absolute inset-x-0 bottom-0 h-2/3 pointer-events-none"
           style={{
             background:
-              'radial-gradient(ellipse at 50% 100%, rgba(255,153,51,0.32) 0%, rgba(190,90,16,0.16) 35%, transparent 70%)',
+              'radial-gradient(ellipse at 16% 100%, rgba(255,153,51,0.48) 0%, transparent 50%),' +
+              'radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.34) 0%, transparent 48%),' +
+              'radial-gradient(ellipse at 84% 100%, rgba(33,176,72,0.46) 0%, transparent 50%)',
           }}
         />
         <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black/70 via-black/30 to-transparent pointer-events-none" />
@@ -84,31 +87,32 @@ export default function Hero() {
 
         {/* floodlights */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {/* tiranga floodlights — saffron (left), white (centre), green (right) */}
           <div
-            className="absolute -top-20 left-[8%] w-[280px] h-[120%] floodlight-1"
+            className="absolute -top-20 left-[8%] w-[320px] h-[120%] floodlight-1"
             style={{
               background:
-                'linear-gradient(180deg, rgba(244,235,215,0.55) 0%, rgba(244,235,215,0.18) 35%, rgba(244,235,215,0) 80%)',
+                'linear-gradient(180deg, rgba(255,153,51,0.8) 0%, rgba(255,153,51,0.28) 40%, transparent 82%)',
               filter: 'blur(30px)',
               transform: 'rotate(12deg)',
               transformOrigin: 'top center',
             }}
           />
           <div
-            className="absolute -top-20 left-1/2 -translate-x-1/2 w-[240px] h-[120%] floodlight-3"
+            className="absolute -top-20 left-1/2 -translate-x-1/2 w-[260px] h-[120%] floodlight-3"
             style={{
               background:
-                'linear-gradient(180deg, rgba(255,225,180,0.5) 0%, rgba(255,225,180,0.15) 35%, transparent 80%)',
+                'linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.24) 38%, transparent 82%)',
               filter: 'blur(40px)',
               transform: 'rotate(-4deg)',
               transformOrigin: 'top center',
             }}
           />
           <div
-            className="absolute -top-20 right-[6%] w-[320px] h-[120%] floodlight-2"
+            className="absolute -top-20 right-[6%] w-[340px] h-[120%] floodlight-2"
             style={{
               background:
-                'linear-gradient(180deg, rgba(255,153,51,0.45) 0%, rgba(255,153,51,0.15) 40%, transparent 80%)',
+                'linear-gradient(180deg, rgba(40,185,76,0.74) 0%, rgba(19,136,8,0.26) 42%, transparent 82%)',
               filter: 'blur(36px)',
               transform: 'rotate(-14deg)',
               transformOrigin: 'top center',
@@ -241,7 +245,7 @@ export default function Hero() {
                 />
                 <span>Live rally · Since 2026</span>
               </div>
-              <h1 className="text-[1.75rem] sm:text-5xl md:text-6xl lg:text-7xl leading-[1] sm:leading-[0.92] mb-6 sm:mb-8 drop-shadow-[0_2px_24px_rgba(0,0,0,0.7)]">
+              <h1 className="text-[clamp(1.35rem,7vw,1.75rem)] sm:text-5xl md:text-6xl lg:text-7xl leading-[1] sm:leading-[0.92] mb-6 sm:mb-8 drop-shadow-[0_2px_24px_rgba(0,0,0,0.7)]">
                 <span className="block text-paper whitespace-nowrap">Commission-Mukt</span>
                 <span className="block text-gold">Bharat.</span>
               </h1>
@@ -253,15 +257,15 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12">
               <a
                 className="btn-sheen group condensed text-sm font-semibold tracking-wider bg-gold text-ink px-7 py-4 min-h-[48px] rounded-sm hover:bg-paper hover:text-ink transition inline-flex items-center justify-center gap-2 shadow-[0_6px_18px_rgba(255,153,51,0.4)]"
-                href="#join"
+                href="/join"
               >
                 JOIN THE MOVEMENT <span aria-hidden="true" className="arrow">→</span>
               </a>
               <a
                 className="btn-sheen condensed text-sm font-semibold tracking-wider border-2 border-green text-paper px-7 py-4 min-h-[48px] rounded-sm hover:bg-green hover:text-paper hover:border-green transition inline-flex items-center justify-center backdrop-blur-sm bg-green/10"
-                href="#manifesto"
+                href="#vision-deep"
               >
-                READ THE MANIFESTO
+                OUR VISION
               </a>
             </div>
             <dl className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 pt-6 border-t border-paper/25 max-w-2xl">

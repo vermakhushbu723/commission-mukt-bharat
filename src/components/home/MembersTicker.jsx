@@ -13,6 +13,10 @@ export default function MembersTicker() {
       role="region"
       aria-label="Latest 24 members of Commission-Mukt Bharat"
     >
+      {/* tiranga strips top & bottom */}
+      <div aria-hidden="true" className="tiranga-strip absolute inset-x-0 top-0 h-[3px] z-20" />
+      <div aria-hidden="true" className="tiranga-strip absolute inset-x-0 bottom-0 h-[3px] z-20" />
+
       <div aria-hidden="true" className="absolute left-0 top-0 bottom-0 w-12 z-10 pointer-events-none" style={fade('right')} />
       <div aria-hidden="true" className="absolute right-0 top-0 bottom-0 w-12 z-10 pointer-events-none" style={fade('left')} />
 

@@ -25,12 +25,10 @@ export const HERO_STATS = [
 
 export const NAV_LINKS = [
   { label: 'Vision', href: '/#vision' },
-  { label: 'Manifesto', href: '/#manifesto' },
   { label: 'Articles', href: '/articles' },
   { label: 'Gallery', href: '/gallery' },
   { label: 'Members', href: '/members' },
   { label: 'Issues', href: '/issues' },
-  { label: 'Tracker', href: '/tracker' },
   { label: 'Contact', href: '/#contact' },
 ]
 
@@ -49,10 +47,8 @@ export const FOOTER_COLUMNS = [
     title: 'The Movement',
     links: [
       { label: 'Vision', href: '/#vision' },
-      { label: 'The Manifesto', href: '/#manifesto' },
       { label: 'Articles', href: '/articles' },
       { label: 'Gallery', href: '/gallery' },
-      { label: 'Tracker', href: '/tracker' },
     ],
   },
   {
@@ -60,7 +56,6 @@ export const FOOTER_COLUMNS = [
     links: [
       { label: 'Reports', href: '/reports' },
       { label: 'Issues', href: '/issues' },
-      { label: 'Manifesto', href: '/manifesto' },
       { label: 'News', href: '/news' },
       { label: 'Quotes', href: '/quotes' },
     ],

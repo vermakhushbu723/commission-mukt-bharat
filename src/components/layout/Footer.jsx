@@ -14,7 +14,13 @@ function FooterBrand() {
 
 export default function Footer() {
   return (
-    <footer className="relative bg-ink text-paper pt-12 sm:pt-16 pb-6 sm:pb-8">
+    <footer
+      className="relative bg-ink text-paper pt-12 sm:pt-16 pb-6 sm:pb-8"
+      style={{
+        backgroundImage:
+          'linear-gradient(to bottom, rgba(255,153,51,0.16) 0%, rgba(255,153,51,0.04) 14%, transparent 32%, transparent 70%, rgba(19,136,8,0.07) 88%, rgba(19,136,8,0.20) 100%)',
+      }}
+    >
       {/* tricolour accent line */}
       <div aria-hidden="true" className="absolute inset-x-0 top-0 flex h-1">
         <div className="flex-1 bg-gold" />
@@ -40,7 +46,7 @@ export default function Footer() {
         </div>
 
         {/* Brand + columns */}
-        <div className="grid grid-cols-[auto_auto] justify-center lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr] lg:justify-stretch gap-x-12 gap-y-8 sm:gap-10 pb-10 sm:pb-12 border-b border-rule-on-ink">
+        <div className="grid grid-cols-[auto_auto] justify-center lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr] lg:justify-stretch gap-x-6 gap-y-8 sm:gap-10 pb-10 sm:pb-12 border-b border-rule-on-ink">
           <div className="col-span-2 lg:col-span-1">
             <FooterBrand />
             <p className="text-paper/65 text-sm leading-relaxed mt-5 sm:mt-6 max-w-md">
