@@ -181,6 +181,10 @@
 .marquee-track-fast {
   animation-duration: 26s;
 }
+/* Pause an auto-scrolling slider while the pointer is over it */
+.marquee-pause:hover .marquee-track {
+  animation-play-state: paused;
+}
 .news-ticker-track {
   display: flex;
   width: max-content;
