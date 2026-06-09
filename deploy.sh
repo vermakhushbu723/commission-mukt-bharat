@@ -22,7 +22,7 @@ set -euo pipefail
 
 # ---------- Config (override via env or .env.deploy) ------------------------
 APP_NAME="${APP_NAME:-commission-mukt-bharat}"
-APP_DIR="${APP_DIR:-/var/www/${APP_NAME}}"
+APP_DIR="${APP_DIR:-/home/ubuntu/${APP_NAME}}"
 BRANCH="${BRANCH:-main}"
 PORT="${PORT:-3000}"
 REPO_OWNER="${REPO_OWNER:-sage-rebirth}"
