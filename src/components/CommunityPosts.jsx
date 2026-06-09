@@ -6,6 +6,7 @@ import Comments from './Comments'
 // comment thread via a per-post storage key.
 const POSTS_KEY = 'cmb-posts'
 const MAX_IMAGE_BYTES = 1.5 * 1024 * 1024 // 1.5 MB — keep localStorage happy
+const MAX_VIDEO_BYTES = 6 * 1024 * 1024 // 6 MB — larger clips may not persist across reloads
 
 const FIELD =
   'w-full bg-paper border-2 border-ink/25 rounded-sm px-4 py-3 text-ink placeholder:text-ink/40 focus:border-green focus:outline-none focus:ring-2 focus:ring-green/40 transition'
@@ -36,8 +37,10 @@ function Composer({ onPublish }) {
   const [title, setTitle] = useState('')
   const [body, setBody] = useState('')
   const [image, setImage] = useState(null)
+  const [video, setVideo] = useState(null)
   const [error, setError] = useState('')
   const fileRef = useRef(null)
+  const videoRef = useRef(null)
 
   function onFile(e) {
     const file = e.target.files?.[0]
@@ -58,9 +61,33 @@ function Composer({ onPublish }) {
     reader.readAsDataURL(file)
   }
 
+  function onVideoFile(e) {
+    const file = e.target.files?.[0]
+    if (!file) return
+    if (!file.type.startsWith('video/')) {
+      setError('Please choose a video file.')
+      return
+    }
+    if (file.size > MAX_VIDEO_BYTES) {
+      setError('Video is too large — please use a clip under 6 MB.')
+      return
+    }
+    const reader = new FileReader()
+    reader.onload = () => {
+      setVideo(reader.result)
+      setError('')
+    }
+    reader.readAsDataURL(file)
+  }
+
   function removeImage() {
     setImage(null)
     if (fileRef.current) fileRef.current.value = ''
+  }
+
+  function removeVideo() {
+    setVideo(null)
+    if (videoRef.current) videoRef.current.value = ''
   }
 
   function handleSubmit(e) {
@@ -78,11 +105,13 @@ function Composer({ onPublish }) {
       title: title.trim(),
       body: body.trim(),
       image,
+      video,
     })
     setName('')
     setTitle('')
     setBody('')
     removeImage()
+    removeVideo()
     setError('')
   }
 
@@ -124,8 +153,26 @@ function Composer({ onPublish }) {
         className={`${FIELD} mb-3`}
       />
 
-      {/* Image upload */}
-      {image ? (
+      {/* Upload buttons — image and/or video */}
+      <div className="flex flex-col sm:flex-row gap-3 mb-3">
+        <label className="flex-1 flex items-center justify-center gap-2 cursor-pointer border-2 border-dashed border-ink/30 rounded-sm px-4 py-3 hover:border-green transition">
+          <span className="condensed text-xs font-semibold tracking-wider bg-ink text-paper px-4 py-2 rounded-sm">
+            📷 UPLOAD IMAGE
+          </span>
+          <span className="text-xs text-ink/55">JPG/PNG · ≤ 1.5 MB</span>
+          <input ref={fileRef} type="file" accept="image/*" onChange={onFile} className="hidden" />
+        </label>
+        <label className="flex-1 flex items-center justify-center gap-2 cursor-pointer border-2 border-dashed border-ink/30 rounded-sm px-4 py-3 hover:border-green transition">
+          <span className="condensed text-xs font-semibold tracking-wider bg-ink text-paper px-4 py-2 rounded-sm">
+            🎬 UPLOAD VIDEO
+          </span>
+          <span className="text-xs text-ink/55">MP4 · ≤ 6 MB</span>
+          <input ref={videoRef} type="file" accept="video/*" onChange={onVideoFile} className="hidden" />
+        </label>
+      </div>
+
+      {/* Image preview */}
+      {image && (
         <div className="relative mb-3 border-2 border-ink rounded-sm overflow-hidden">
           <img src={image} alt="Selected preview" className="w-full max-h-72 object-cover" />
           <button
@@ -136,14 +183,20 @@ function Composer({ onPublish }) {
             REMOVE IMAGE
           </button>
         </div>
-      ) : (
-        <label className="flex items-center gap-3 mb-3 cursor-pointer border-2 border-dashed border-ink/30 rounded-sm px-4 py-4 hover:border-green transition">
-          <span className="condensed text-xs font-semibold tracking-wider bg-ink text-paper px-4 py-2.5 rounded-sm">
-            UPLOAD IMAGE
-          </span>
-          <span className="text-sm text-ink/55">Optional · JPG/PNG, up to 1.5 MB</span>
-          <input ref={fileRef} type="file" accept="image/*" onChange={onFile} className="hidden" />
-        </label>
+      )}
+
+      {/* Video preview */}
+      {video && (
+        <div className="relative mb-3 border-2 border-ink rounded-sm overflow-hidden bg-black">
+          <video src={video} controls className="w-full max-h-72" />
+          <button
+            type="button"
+            onClick={removeVideo}
+            className="absolute top-2 right-2 condensed text-[0.65rem] font-semibold tracking-wider bg-ink/85 text-paper px-3 py-1.5 rounded-sm hover:bg-red-700 transition"
+          >
+            REMOVE VIDEO
+          </button>
+        </div>
       )}
 
       {error && <p className="text-xs text-red-600 mb-3">{error}</p>}
@@ -160,19 +213,20 @@ function Composer({ onPublish }) {
 
 /* ---------- a single reader-submitted post + its comments ---------- */
 function Post({ post }) {
-  const hasImage = Boolean(post.image)
+  const hasMedia = Boolean(post.image || post.video)
 
   return (
     <article className="bg-paper border-2 border-ink rounded-sm overflow-hidden shadow-[6px_6px_0_0_rgba(35,35,35,0.85)] hover:shadow-[8px_8px_0_0_rgba(35,35,35,0.9)] transition-shadow">
-      {/* Top: image (left) + content (right) */}
-      <div className={hasImage ? 'grid md:grid-cols-[minmax(0,42%)_1fr]' : ''}>
-        {hasImage && (
-          <div className="relative border-b-2 md:border-b-0 md:border-r-2 border-ink bg-paper-soft">
-            <img
-              src={post.image}
-              alt={post.title}
-              className="w-full h-40 md:h-full md:absolute md:inset-0 object-cover"
-            />
+      {/* Top: media (left) + content (right) */}
+      <div className={hasMedia ? 'grid md:grid-cols-[minmax(0,42%)_1fr]' : ''}>
+        {hasMedia && (
+          <div className="relative border-b-2 md:border-b-0 md:border-r-2 border-ink bg-paper-soft self-stretch flex flex-col">
+            {post.image && (
+              <img src={post.image} alt={post.title} className="w-full h-44 sm:h-full object-cover" />
+            )}
+            {post.video && (
+              <video src={post.video} controls className="w-full h-44 sm:h-full object-cover bg-black" />
+            )}
             <span className="absolute top-3 left-3 condensed text-[0.6rem] font-bold tracking-[0.16em] uppercase bg-ink/85 text-paper px-2.5 py-1 rounded-sm">
               ✦ Reader submission
             </span>
@@ -190,7 +244,7 @@ function Post({ post }) {
             <div className="leading-tight min-w-0">
               <div className="font-display text-sm truncate">{post.name}</div>
               <div className="condensed text-[0.6rem] tracking-wider text-ink/50">
-                {post.dateLabel}{!hasImage && ' · Reader submission'}
+                {post.dateLabel}{!hasMedia && ' · Reader submission'}
               </div>
             </div>
           </div>
@@ -239,8 +293,8 @@ export default function CommunityPosts() {
         </h2>
         <span className="title-rule mb-5" aria-hidden="true" />
         <p className="text-sm sm:text-base text-ink/70 max-w-xl">
-          Share your own story with the movement — add a picture if you have one. Every post gets its own comment
-          thread, so readers can reply right below it.
+          Share your own story with the movement — add a photo or a video if you have one. Every post gets its own
+          comment thread, so readers can reply right below it.
         </p>
       </div>
 

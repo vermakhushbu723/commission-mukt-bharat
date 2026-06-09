@@ -7,6 +7,8 @@ import Home from './pages/Home'
 import ArticlesPage from './pages/ArticlesPage'
 import IssuesPage from './pages/IssuesPage'
 import JoinPage from './pages/JoinPage'
+import { LanguageProvider } from './i18n/LanguageContext'
+import Translator from './i18n/Translator'
 
 // Dependency-free routing: the Vite dev/preview server serves index.html for any
 // path, so we pick the page from the URL. Full-page <a> navigations keep it simple.
@@ -48,7 +50,8 @@ export default function App() {
   const page = currentPage()
 
   return (
-    <>
+    <LanguageProvider>
+      <Translator />
       <a href="#main-content" className="skip-link">
         Skip to content
       </a>
@@ -68,6 +71,6 @@ export default function App() {
 
       <Footer />
       <SwarmChatButton />
-    </>
+    </LanguageProvider>
   )
 }

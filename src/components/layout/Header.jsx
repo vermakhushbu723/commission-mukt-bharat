@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Logo from '../ui/Logo'
 import { GlobeIcon, MenuIcon, CloseIcon, ChevronDownMini } from '../ui/Icons'
 import { SITE, NAV_LINKS } from '../../data/site'
+import { useLanguage } from '../../i18n/LanguageContext'
 
 const LANGUAGES = [
   { code: 'en', label: 'English' },
@@ -23,10 +24,15 @@ function Brand() {
 
 function LanguageSelector() {
   const [open, setOpen] = useState(false)
-  const [lang, setLang] = useState(LANGUAGES[0])
+  const { lang, setLang } = useLanguage()
+  const current = LANGUAGES.find((l) => l.code === lang) || LANGUAGES[0]
 
   return (
-    <div className="relative" onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && setOpen(false)}>
+    <div
+      className="relative"
+      data-no-translate
+      onBlur={(e) => !e.currentTarget.contains(e.relatedTarget) && setOpen(false)}
+    >
       <button
         type="button"
         aria-haspopup="listbox"
@@ -36,8 +42,8 @@ function LanguageSelector() {
         className="flex items-center gap-1.5 px-2.5 py-2 condensed text-xs font-medium tracking-wider rounded-sm border border-transparent text-ink hover:text-gold hover:border-ink/20 transition"
       >
         <GlobeIcon size={14} />
-        <span className="hidden sm:inline">{lang.label}</span>
-        <span className="sm:hidden uppercase">{lang.code}</span>
+        <span className="hidden sm:inline">{current.label}</span>
+        <span className="sm:hidden uppercase">{current.code}</span>
         <ChevronDownMini className={`transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
       {open && (
@@ -50,13 +56,13 @@ function LanguageSelector() {
               <button
                 type="button"
                 role="option"
-                aria-selected={l.code === lang.code}
+                aria-selected={l.code === current.code}
                 onClick={() => {
-                  setLang(l)
+                  setLang(l.code)
                   setOpen(false)
                 }}
                 className={`w-full text-left px-3 py-2 condensed text-xs tracking-wider transition hover:bg-paper-soft hover:text-gold-ink ${
-                  l.code === lang.code ? 'text-gold-ink' : 'text-ink'
+                  l.code === current.code ? 'text-gold-ink' : 'text-ink'
                 }`}
               >
                 {l.label}

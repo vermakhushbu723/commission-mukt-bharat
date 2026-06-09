@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { SITE } from '../data/site'
+import GoogleLogin from '../components/GoogleLogin'
 
 const CONCERNS = [
   'Paying high commission to e-commerce',
@@ -39,6 +40,13 @@ export default function JoinPage() {
   const [other, setOther] = useState('')
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [googleEmail, setGoogleEmail] = useState('')
+
+  function handleGoogle({ name, email }) {
+    setForm((prev) => ({ ...prev, name: name || prev.name, email: email || prev.email }))
+    setGoogleEmail(email || '')
+    setErrors((prev) => ({ ...prev, name: undefined, email: undefined }))
+  }
 
   const set = (key) => (e) => {
     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
@@ -118,6 +126,21 @@ export default function JoinPage() {
             >
               {/* honeypot */}
               <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
+
+              {/* Google / Gmail sign-in */}
+              <div className="mb-6">
+                <GoogleLogin onSuccess={handleGoogle} />
+                {googleEmail && (
+                  <p className="text-xs text-green-ink mt-2 text-center">
+                    ✓ Signed in as <strong>{googleEmail}</strong> — just complete the details below.
+                  </p>
+                )}
+                <div className="flex items-center gap-4 mt-6" aria-hidden="true">
+                  <span className="h-px flex-1 bg-ink/15" />
+                  <span className="condensed text-[0.7rem] tracking-[0.18em] uppercase text-ink/45">or fill the form</span>
+                  <span className="h-px flex-1 bg-ink/15" />
+                </div>
+              </div>
 
               <div className="grid sm:grid-cols-2 gap-5">
                 <div className="sm:col-span-2">
