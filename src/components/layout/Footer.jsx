@@ -1,7 +1,7 @@
 import Logo from '../ui/Logo'
 import { BrandIcon } from '../ui/Icons'
 import NewsletterForm from './NewsletterForm'
-import { SITE, SOCIAL_LINKS, FOOTER_COLUMNS, FOOTER_BOTTOM_LINKS } from '../../data/site'
+import { SITE, SOCIAL_LINKS, NAV_LINKS } from '../../data/site'
 
 function FooterBrand() {
   return (
@@ -45,9 +45,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Brand + columns */}
-        <div className="grid grid-cols-[auto_auto] justify-center lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr] lg:justify-stretch gap-x-6 gap-y-8 sm:gap-10 pb-10 sm:pb-12 border-b border-rule-on-ink">
-          <div className="col-span-2 lg:col-span-1">
+        {/* Brand + navbar links */}
+        <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-8 lg:gap-16 pb-10 sm:pb-12 border-b border-rule-on-ink">
+          <div>
             <FooterBrand />
             <p className="text-paper/65 text-sm leading-relaxed mt-5 sm:mt-6 max-w-md">
               A citizens' movement against unfair commissions, surge tricks, and stacked-up platform fees. Headquartered wherever the
@@ -71,28 +71,26 @@ export default function Footer() {
             </ul>
           </div>
 
-          {FOOTER_COLUMNS.map((col) => (
-            <div key={col.title}>
-              <h4
-                className="font-bold tracking-[0.18em] uppercase text-[0.62rem] text-paper/55 mb-4"
-                style={{ fontFamily: 'var(--font-condensed)' }}
-              >
-                {col.title}
-              </h4>
-              <ul className="space-y-2.5">
-                {col.links.map((link) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="inline-block py-1 text-sm text-paper/80 hover:text-gold transition"
-                    >
-                      {link.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <nav aria-label="Footer">
+            <h4
+              className="font-bold tracking-[0.18em] uppercase text-[0.62rem] text-paper/55 mb-4"
+              style={{ fontFamily: 'var(--font-condensed)' }}
+            >
+              Explore
+            </h4>
+            <ul className="grid grid-cols-2 sm:block gap-x-6 sm:space-y-2.5">
+              {NAV_LINKS.map((link) => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="inline-block py-1 text-sm text-paper/80 hover:text-gold transition"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </div>
 
         {/* Bottom bar */}
@@ -105,16 +103,6 @@ export default function Footer() {
             >
               ✦ Towards a Fair-Priced Bharat
             </div>
-            <nav className="hidden sm:flex flex-wrap items-center gap-3" aria-label="Quick links">
-              {FOOTER_BOTTOM_LINKS.map((link, i) => (
-                <span key={link.label} className="flex items-center gap-3">
-                  <a href={link.href} className="hover:text-gold transition">
-                    {link.label}
-                  </a>
-                  {i < FOOTER_BOTTOM_LINKS.length - 1 && <span aria-hidden="true">·</span>}
-                </span>
-              ))}
-            </nav>
           </div>
         </div>
       </div>

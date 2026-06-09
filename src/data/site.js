@@ -40,6 +40,7 @@ export const SOCIAL_LINKS = [
   { id: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61590017357770' },
   { id: 'whatsapp', label: 'WhatsApp', href: 'https://whatsapp.com/channel/0029VbBqF7S5fM5Rf1mRV540' },
   { id: 'telegram', label: 'Telegram', href: 'https://t.me/commissionmuktbharat' },
+  { id: 'website', label: 'Our Website — bluecs.in', href: 'https://www.bluecs.in/' },
 ]
 
 export const FOOTER_COLUMNS = [
