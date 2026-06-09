@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# deploy
+.env.deploy
+.deploy-lock-hash
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
