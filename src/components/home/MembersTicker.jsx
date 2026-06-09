@@ -6,6 +6,16 @@ const fade = (dir) => ({
   background: `linear-gradient(to ${dir}, var(--paper-soft, #ecedf2), transparent)`,
 })
 
+// Keep the avatar chip in sync with the displayed name — e.g. "Anonymous" → "A".
+const initialsFromName = (name) =>
+  name
+    .trim()
+    .split(/\s+/)
+    .map((w) => w[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase()
+
 export default function MembersTicker() {
   return (
     <div
@@ -36,7 +46,7 @@ export default function MembersTicker() {
             className="inline-flex items-center gap-2.5 px-3 py-1 mx-1 rounded-full bg-paper border border-ink/10 whitespace-nowrap"
             title={`REQ / ${m.id} · ${m.name} · ${m.location}`}
           >
-            <MemberAvatar initials={m.initials} variant={m.variant} />
+            <MemberAvatar initials={initialsFromName(m.name)} variant={m.variant} />
             <span className="flex flex-col leading-tight">
               <span className="text-[0.78rem] font-medium text-ink">{m.name}</span>
               <span

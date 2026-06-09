@@ -81,6 +81,9 @@
     font-family: var(--font-display);
     font-weight: 400;
     line-height: 1.05;
+    /* Bowlby One is a very wide display face. Let long words wrap instead of
+       being clipped by the `overflow-x: clip` guard on <body>. */
+    overflow-wrap: break-word;
   }
 
   /* The brand uses <em> purely as a coloured accent, never true italics. */
@@ -111,6 +114,24 @@
   font-size: 0.72rem;
   font-weight: 600;
   line-height: 1;
+}
+
+/* One shared responsive size for every primary section / page heading, so they
+   scale identically across screens. Phones get smooth fluid sizing (wide
+   Bowlby One words always fit); the designed sizes take over at 640px & 768px.
+   Card-level headings keep their own smaller sizes. */
+.heading-section {
+  font-size: clamp(1.5rem, 6.8vw, 2.3rem);
+}
+@media (min-width: 640px) {
+  .heading-section {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .heading-section {
+    font-size: 3.75rem;
+  }
 }
 
 .skip-link {

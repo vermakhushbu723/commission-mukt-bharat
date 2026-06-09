@@ -11,7 +11,7 @@ export default function NonPolitical() {
     <section id="non-political" className="py-20 sm:py-28 md:py-32 bg-paper-soft border-y-2 border-ink/15">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
         <div className="eyebrow text-green-ink mb-5 reveal">No party · No politics</div>
-        <h2 className="text-5xl sm:text-6xl md:text-7xl mb-2 reveal">
+        <h2 className="heading-section mb-2 reveal">
           A <em className="text-gold-ink">non-political</em> movement.
         </h2>
         <span className="title-rule center mb-6" aria-hidden="true" />

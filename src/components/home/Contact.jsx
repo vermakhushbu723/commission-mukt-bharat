@@ -8,7 +8,7 @@ export default function Contact() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_1fr] gap-12 lg:gap-20">
         <div className="reveal">
           <div className="eyebrow text-gold-ink mb-5">Get in touch</div>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl mb-2">
+          <h2 className="heading-section mb-2">
             Connect <em className="text-green-ink">with us.</em>
           </h2>
           <span className="title-rule mb-6" aria-hidden="true" />

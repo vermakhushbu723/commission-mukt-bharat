@@ -7,7 +7,7 @@ export default function Articles() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 reveal">
           <div>
             <div className="eyebrow text-green-ink mb-5">The Journal</div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl leading-tight mb-2">
+            <h2 className="heading-section leading-tight mb-2">
               Latest <em className="text-gold-ink">essays.</em>
             </h2>
             <span className="title-rule" aria-hidden="true" />

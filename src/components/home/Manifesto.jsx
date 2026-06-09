@@ -7,7 +7,7 @@ export default function Manifesto() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
         <div className="text-center mb-16 max-w-2xl mx-auto reveal">
           <div className="eyebrow text-gold mb-5">Five Demands Against the Commission Economy</div>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-2">The Manifesto.</h2>
+          <h2 className="heading-section mb-2">The Manifesto.</h2>
           <span className="title-rule center mb-6" aria-hidden="true" />
           <p className="text-base sm:text-lg text-paper/75">
             Five demands to end unfair commissions on food-delivery and cab-booking apps — fair pay for drivers,

@@ -83,7 +83,7 @@ export default function JoinPage() {
           {/* Heading */}
           <div className="text-center mb-12 reveal is-visible">
             <div className="eyebrow text-green-ink mb-5">Membership · Free & lifelong</div>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl mb-2">
+            <h1 className="heading-section mb-2">
               Join the <em className="text-gold-ink">movement.</em>
             </h1>
             <span className="title-rule center mb-6" aria-hidden="true" />

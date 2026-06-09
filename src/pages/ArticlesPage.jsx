@@ -22,7 +22,7 @@ export default function ArticlesPage() {
           {/* ---------- Header ---------- */}
           <div className="reveal">
             <div className="eyebrow text-green-ink mb-5">The Journal</div>
-            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl leading-[0.95] mb-2">
+            <h1 className="font-display heading-section leading-[0.95] mb-2">
               Articles &amp; <em className="text-gold-ink">Essays.</em>
             </h1>
             <span className="title-rule mb-6" aria-hidden="true" />

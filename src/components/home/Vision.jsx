@@ -5,10 +5,10 @@ import visionImg from '../../assets/Movementvision.jpeg'
 export default function Vision() {
   return (
     <section id="vision" className="py-20 sm:py-28 md:py-32 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-[1fr_1.2fr] gap-10 lg:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div className="reveal">
           <div className="eyebrow text-green-ink mb-6">Chapter One · Our Vision</div>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl mb-2 leading-[0.95]">
+          <h2 className="heading-section mb-2 leading-[0.95]">
             Bharat Free From Unfair <em className="text-gold-ink">Commissions.</em>
           </h2>
           <span className="title-rule mb-8" aria-hidden="true" />

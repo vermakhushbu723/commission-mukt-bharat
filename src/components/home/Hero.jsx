@@ -154,7 +154,7 @@ export default function Hero() {
         />
 
         {/* crowd */}
-        <CrowdSilhouette className="absolute bottom-0 inset-x-0 w-full h-[22vh] sm:h-[26vh]" />
+        <CrowdSilhouette className="absolute bottom-0 inset-x-0 w-full h-[22vh] sm:h-[26vh] opacity-40" />
 
         {/* camera flashes */}
         <div className="absolute inset-x-0 bottom-[22%] pointer-events-none">
@@ -173,7 +173,7 @@ export default function Hero() {
         </div>
 
         {/* tricolour parade float */}
-        <div className="absolute right-[4%] sm:right-[5%] md:right-[6%] lg:right-[7%] bottom-[18%] w-[195px] sm:w-[330px] md:w-[430px] lg:w-[500px] max-w-[46vw] pointer-events-none">
+        <div className="absolute right-1 sm:right-[5%] md:right-[6%] lg:right-[7%] bottom-[6%] sm:bottom-[18%] w-[150px] sm:w-[330px] md:w-[430px] lg:w-[500px] max-w-[44vw] pointer-events-none">
           <SpeakerPodium />
         </div>
 
@@ -233,8 +233,8 @@ export default function Hero() {
       </div>
 
       {/* ---------- Content ---------- */}
-      <div className="relative z-10 w-full self-stretch flex items-center">
-        <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 pt-16 sm:pt-24 pb-28 sm:pb-32">
+      <div className="relative z-10 w-full self-stretch flex items-start sm:items-center">
+        <div className="max-w-7xl w-full mx-auto px-4 sm:px-6 pt-44 sm:pt-24 pb-28 sm:pb-32">
           <div className="max-w-2xl lg:max-w-3xl">
             <div>
               <div className="eyebrow text-gold mb-5 sm:mb-6 flex items-center gap-3">
@@ -245,8 +245,8 @@ export default function Hero() {
                 /> */}
                 {/* <span>Live rally · Since 2026</span> */}
               </div>
-              <h1 className="text-[clamp(1.35rem,7vw,1.75rem)] sm:text-5xl md:text-6xl lg:text-7xl leading-[1] sm:leading-[0.92] mb-6 sm:mb-8 drop-shadow-[0_2px_24px_rgba(0,0,0,0.7)]">
-                <span className="block text-paper whitespace-nowrap">Commission-Mukt</span>
+              <h1 className="text-[clamp(1.35rem,5.6vw,2.6rem)] lg:text-5xl leading-[1.05] sm:leading-[0.95] mb-6 sm:mb-8 drop-shadow-[0_2px_24px_rgba(0,0,0,0.7)]">
+                <span className="block text-paper">Commission-Mukt</span>
                 <span className="block text-gold">Bharat.</span>
               </h1>
             </div>

@@ -29,7 +29,7 @@ export default function WhoShouldNotJoin() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 relative">
         <div className="text-center mb-14 max-w-2xl mx-auto reveal">
           <div className="eyebrow text-gold mb-5">Be honest with yourself</div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl mb-2 leading-[1.02]">
+          <h2 className="heading-section mb-2 leading-[1.02]">
             Who should <em className="text-green">join</em> — and who{' '}
             <em className="text-gold">should not</em>.
           </h2>

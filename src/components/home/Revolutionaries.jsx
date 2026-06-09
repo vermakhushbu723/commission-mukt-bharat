@@ -6,7 +6,7 @@ export default function Revolutionaries() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-10 sm:mb-12 max-w-2xl mx-auto reveal">
           <div className="eyebrow text-green-ink mb-5">In their footsteps</div>
-          <h2 id="revolutionaries-heading" className="text-4xl sm:text-5xl md:text-6xl mb-2">
+          <h2 id="revolutionaries-heading" className="heading-section mb-2">
             Revolutionaries <em className="text-gold-ink">of India.</em>
           </h2>
           <span className="title-rule center mb-5" aria-hidden="true" />

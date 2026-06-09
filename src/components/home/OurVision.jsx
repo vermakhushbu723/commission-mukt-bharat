@@ -42,7 +42,7 @@ export default function OurVision() {
         {/* Heading */}
         <div className="text-center mb-14 sm:mb-16 max-w-2xl mx-auto reveal">
           <div className="eyebrow text-gold mb-5">Our Vision</div>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-2 leading-[0.95]">
+          <h2 className="heading-section mb-2 leading-[0.95]">
             The Bharat we're <em className="text-gold">building.</em>
           </h2>
           <span className="title-rule center mb-6" aria-hidden="true" />
@@ -62,7 +62,7 @@ export default function OurVision() {
               style={{ '--reveal-delay': `${index * 80}ms` }}
             >
               <div className={`font-display text-4xl sm:text-5xl ${p.accent} leading-none mb-4`}>{p.n}</div>
-              <h3 className="font-display text-2xl sm:text-3xl mb-3">{p.title}</h3>
+              <h3 className="font-display text-xl sm:text-2xl mb-3">{p.title}</h3>
               <p className="text-sm sm:text-base leading-relaxed text-paper/80">{p.body}</p>
             </li>
           ))}

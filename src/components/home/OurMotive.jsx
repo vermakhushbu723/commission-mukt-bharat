@@ -26,7 +26,7 @@ export default function OurMotive() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-14 max-w-2xl mx-auto reveal">
           <div className="eyebrow text-green-ink mb-5">Who we fight for</div>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl mb-2">
+          <h2 className="heading-section mb-2">
             Our <em className="text-gold-ink">motive.</em>
           </h2>
           <span className="title-rule center mb-6" aria-hidden="true" />
@@ -44,7 +44,7 @@ export default function OurMotive() {
               style={{ '--reveal-delay': `${i * 80}ms` }}
             >
               <div className={`font-display text-4xl sm:text-5xl ${m.accent} leading-none mb-3`}>{m.n}</div>
-              <h3 className="font-display text-2xl mb-2 leading-tight">{m.title}</h3>
+              <h3 className="font-display text-xl sm:text-2xl mb-2 leading-tight">{m.title}</h3>
               <p className="text-sm sm:text-base text-ink/75 leading-relaxed">{m.body}</p>
             </li>
           ))}

@@ -163,7 +163,7 @@ export default function IssuesPage() {
           <header className="mb-6 flex items-start justify-between gap-4 flex-wrap reveal">
             <div>
               <div className="eyebrow text-green-ink mb-2">Voice of the citizens · the real cost of every order &amp; ride</div>
-              <h1 className="font-display text-4xl sm:text-5xl leading-[0.95]">
+              <h1 className="font-display heading-section leading-[0.95]">
                 All <em className="text-gold-ink">Issues.</em>
               </h1>
               <span className="title-rule" aria-hidden="true" />

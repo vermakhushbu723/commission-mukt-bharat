@@ -7,7 +7,7 @@ export default function Join() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-14 max-w-2xl mx-auto reveal">
           <div className="eyebrow text-green-ink mb-5">Where commissions bite</div>
-          <h2 className="text-5xl sm:text-6xl md:text-7xl mb-2">
+          <h2 className="heading-section mb-2">
             Where they take{' '}
             <span className="whitespace-nowrap">
               their <em className="text-gold-ink">cut.</em>

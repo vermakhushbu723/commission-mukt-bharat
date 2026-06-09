@@ -234,7 +234,7 @@ export default function CommunityPosts() {
     <section aria-label="Community articles" className="border-t-2 border-ink/15 pt-12 mt-16">
       <div className="reveal is-visible mb-8">
         <div className="eyebrow text-green-ink mb-4">From the community</div>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-tight mb-2">
+        <h2 className="font-display text-3xl sm:text-4xl leading-tight mb-2">
           Post your <em className="text-gold-ink">article.</em>
         </h2>
         <span className="title-rule mb-5" aria-hidden="true" />
