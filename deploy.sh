@@ -25,7 +25,7 @@ APP_NAME="${APP_NAME:-commission-mukt-bharat}"
 APP_DIR="${APP_DIR:-/home/ubuntu/${APP_NAME}}"
 BRANCH="${BRANCH:-main}"
 PORT="${PORT:-3000}"
-REPO_OWNER="${REPO_OWNER:-sage-rebirth}"
+REPO_OWNER="${REPO_OWNER:-techblueera}"
 REPO_NAME="${REPO_NAME:-commission-mukt-bharat}"
 
 # ---------- Load .env.deploy if present -------------------------------------
@@ -87,8 +87,8 @@ NEW_HASH=$(sha256sum package-lock.json | awk '{print $1}')
 if [[ -f "$LOCK_HASH_FILE" && "$(cat "$LOCK_HASH_FILE")" == "$NEW_HASH" ]]; then
   log "Lockfile unchanged — skipping npm ci"
 else
-  log "Installing dependencies (npm ci)"
-  npm ci --no-audit --no-fund
+  log "Installing dependencies (npm install)"
+  npm install --no-audit --no-fund
   echo "$NEW_HASH" > "$LOCK_HASH_FILE"
 fi
 
